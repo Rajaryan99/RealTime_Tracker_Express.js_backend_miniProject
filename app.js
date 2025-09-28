@@ -19,6 +19,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+io.on('connection', function(socket){
+    console.log('connected')
+})
+
 
 app.get('/', (req, res) => {
     res.render('main.ejs');
